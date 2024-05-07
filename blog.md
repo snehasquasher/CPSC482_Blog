@@ -21,7 +21,7 @@ AI is autonomous agents that can follow language instructions to carry out diver
 
 In this paper, AI Web Agents were explored. The environment is the web environment, and agents are made to follow open-ended language instructions like ("Order me a red scarf on Amazon.com") and complete tasks as seen in the image below. 
 
-![Alt text](imags/image-1.png)
+![Alt text](image-1.png)
 …
 
 ### Methodology
