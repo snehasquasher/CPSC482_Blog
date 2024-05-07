@@ -21,14 +21,24 @@ AI is autonomous agents that can follow language instructions to carry out diver
 
 In this paper, AI Web Agents were explored. The environment is the web environment, and agents are made to follow open-ended language instructions like ("Order me a red scarf on Amazon.com") and complete tasks as seen in the image below. 
 
-![Alt text](/imgs/image-1.png)
+![red scarf path](/imgs/image.png)
 …
 
 ### Methodology
 
+![Alt text](/imgs/image-3.png)
+
+SeeAct initially utilizes an LMM (Large Multimodal Modal), such as GPT-4V, for Action Generation by enabling the model to visually interpret websites and create textual action plans. They specifically direct GPT-4V to simulate human interactions with a webpage, taking into account the task at hand, the webpage's layout, and action history. It is tasked with producing a description of the action based on its evaluation and reasoning. Following this, Action Grounding involves translating these textual plans into specific actions by identifying relevant HTML elements and the operations to be performed on them.
 …
 
 ### Results
+
+![results](/imgs/image-2.png)
+
+1. **SeeAct with GPT-4V as a Generalist Web Agent:** SeeAct when paired with GPT-4V, provided with oracle grounding, significantly outperforms traditional methods such as GPT-4 or FLAN-T5, establishing itself as a robust generalist web agent.
+2. **Challenges in Grounding:** Grounding remains a substantial challenge. Even the best grounding strategy, SeeAct Choice, exhibits a 20-25% performance gap compared to oracle grounding.
+3. **In-Context Learning vs. Supervised Fine-Tuning:** In-context learning with large models, including both LMMs (Large Multimodal Models) and LLMs (Large Language Models), demonstrates improved generalization to unseen websites. However, supervised fine-tuning maintains a competitive advantage on websites that were included during the training phase.
+
 
 …
 
