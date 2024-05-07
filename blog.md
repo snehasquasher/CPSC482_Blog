@@ -59,7 +59,6 @@ SeeAct initially utilizes an LMM (Large Multimodal Modal), such as GPT-4V, for A
 
 …
 
-
 # Interesting Observations
 
 1. **General & World Knowledge**
@@ -72,8 +71,11 @@ SeeAct initially utilizes an LMM (Large Multimodal Modal), such as GPT-4V, for A
    - It realizes that the mobile phone number is invalid due to the wrong format and generates the description of the action to correct this error.
 
 
+## Analysis & Areas of Improvement 
 
-## Thoughts and Comments
+Analysis of the selected paper, organized as bullet points, in particular:
+What interests you the most about this work?
+What are the places for improvements, for example, what are the ways you can think of to further improve the performance of the proposed method?
 
 * …
 
