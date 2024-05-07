@@ -43,8 +43,6 @@ SeeAct initially utilizes an LMM (Large Multimodal Modal), such as GPT-4V, for A
 
 ## Analysis 
 
-### Error Analysis (Grounding Methods) 
-
 ## Challenges in Grounding via Textual Choices
 
 - **Model Limitations:** Unable to handle elements like pop-ups, iframes not visible in the HTML DOM Tree.
@@ -59,8 +57,21 @@ SeeAct initially utilizes an LMM (Large Multimodal Modal), such as GPT-4V, for A
 
 - **Heuristic Limitations:** The grounding process is constrained by heuristic-based methods for locating elements, which rely heavily on textual and locality characteristics.
 
-
 …
+
+
+# Interesting Observations
+
+1. **General & World Knowledge**
+   - GPT-4V demonstrates substantial advantages in tasks requiring certain knowledge over finetuned models at a smaller scale, such as being able to type out a valid UK postal code without being told.
+
+2. **World Model (for Websites)**
+   - GPT-4V can predict the state transitions on a website (e.g., what would happen if I clicked this button). Based on its awareness of website state transitions, GPT-4V can conduct speculative planning involving a sequence of subsequent actions in the future to complete the given task.
+
+3. **Error-Correction Awareness**
+   - It realizes that the mobile phone number is invalid due to the wrong format and generates the description of the action to correct this error.
+
+
 
 ## Thoughts and Comments
 
