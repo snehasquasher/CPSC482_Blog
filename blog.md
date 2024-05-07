@@ -108,12 +108,27 @@ Post selection, the corresponding action, value and element pair would be execut
    - It realizes that the mobile phone number is invalid due to the wrong format and generates the description of the action to correct this error.
 
 
-## Analysis & Areas of Improvement 
+# Analysis and Areas of Improvement for Generalist Web Agents
 
-This paper has done a great job in curating one of the first generalist web agents to perform on real life online websites. However, there are many areas for improvement. 
+This paper makes significant strides by introducing one of the first generalist web agents capable of functioning in real-world online environments. Despite its pioneering status, the agent presents numerous opportunities for enhancement.
 
-First, I believe the path forward is in using visual grounding. While the text based HTML choices are the best performing element grounding method in the paper, it has several limitations: extremely high numbers of tokens, slow parsing as well as failure on real world websits that have more complex front-end designs. An improvement in visual grounding could come from training foundational models on website data to improve its ability to map interactive elements on a page to coordinates and bounding boxes accurately. This would drastically improve the speed of execution of the agent as well as reduce the number of tokens needed to pass into the LLM per call. 
+## 1. Enhancing Visual Grounding
 
-Second, I think fine-tuning the agent on website trajectories could be another direction to take. Currently, the VLM does not have a very good understanding of webpages since we are using GPT4V which is mostly trained on text data. 
+The most effective element grounding method discussed in the paper is text-based HTML choices, but this approach is not without its limitations. These include a high token count, slow parsing speeds, and a lack of robustness against complex front-end designs that are common in modern websites. An enhancement in visual grounding could be pivotal. Specifically, training foundational models on website data could markedly improve the agent’s ability to accurately map interactive elements to coordinates and bounding boxes. This advancement would not only accelerate the agent's operational speed but also reduce the number of tokens required per interaction with the language model, thereby optimizing performance.
 
-Finally, exploring agent memory could be an interesting direction. For example, going beyond just providing the previous action history, but augmenting the agent with information specific to a webpage (screenshots, documentation, past interactions) etc and getting it to perform with retrieval augmented generation. 
+**Proposed Action:** Develop and train visual foundational models that focus on recognizing and interpreting interactive web elements more effectively. This training could involve detailed analysis of visual cues on varied website interfaces to improve accuracy and speed.
+
+## 2. Fine-Tuning on Website Trajectories
+
+Currently, the Visual Language Model (VLM) used by the agent relies primarily on GPT-4V, which is predominantly trained on textual data. This training does not provide the VLM with a nuanced understanding of web page navigation and interaction. To address this, fine-tuning the agent on specific website trajectories could substantially enhance its ability to interpret and interact with web pages.
+
+**Proposed Action:** Implement a targeted training regimen where the agent is exposed to common user navigation paths and interactions across different types of websites. This could include task completion scenarios such as online shopping checkouts, form submissions, and more.
+
+## 3. Exploring Agent Memory
+
+Introducing a memory component to the agent could lead to significant improvements in performance, especially in scenarios involving complex interactions over multiple pages or sessions. Rather than merely relying on the history of previous actions, the agent could benefit from access to an augmented memory bank that includes screenshots, documentation, and records of past interactions specific to each webpage.
+
+**Proposed Action:** Develop a memory augmentation framework that allows the agent to store and retrieve context-relevant information during interactions. This could involve using techniques from retrieval-augmented generation to enhance the agent’s ability to pull from past experiences to inform current actions.
+
+## Conclusion
+TO DO
