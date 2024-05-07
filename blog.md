@@ -66,9 +66,10 @@ This is a purely vision based grounding method where all the interactable elemen
 ## Grounding via Element Attributes
 Model generate attributes (textual descriptions) and the heuristic search on the HTML dom tree (e.g. describes the elements that are proximal to it, details regarding the specific element, and identifiable information)
 
+![Alt text](/imgs/element.png)
+
 ## Challenges in Grounding via Element Attributes
 
-![Alt text](/imgs/element.png)
 - **Heuristic Limitations:** The grounding process is constrained by heuristic-based methods for locating elements, which rely heavily on textual and locality characteristics.
 
 ## Grounding via Textual Choices (Best Performing Grounding Method)
@@ -85,7 +86,7 @@ Post selection, the corresponding action, value and element pair would be execut
 - **Slow Parsing:** Since the entire HTML dom tree is being extracted for its interactable elements like (spans, dropdowns, button elements), this parsing is extremely slow and slows the agent down significantly. 
 
 
-### Results
+## Results
 
 ![results](/imgs/image-2.png)
 
