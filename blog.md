@@ -25,17 +25,48 @@ In this paper, AI Web Agents were explored. The environment is the web environme
 
 ### Methodology
 
+
 ![Alt text](/imgs/image-3.png)
 
 SeeAct initially utilizes an LMM (Large Multimodal Modal), such as GPT-4V, for Action Generation by enabling the model to visually interpret websites and create textual action plans. They specifically direct GPT-4V to simulate human interactions with a webpage, taking into account the task at hand, the webpage's layout, and action history. It is tasked with producing a description of the action based on its evaluation and reasoning. Following this, Action Grounding involves translating these textual plans into specific actions by identifying relevant HTML elements and the operations to be performed on them.
 
+# The Environment
+
+![Alt text](image-6.png)
+
+Each Test can be decomposed into a sequence of actions that are taken by the agent. At each time step t, we provide the agent with:
+- **Task**
+- **Current State of the Environment**
+- **Action History**
+- **Action Space**
+
+The agent first generates a set of observations about the environment, and then decides the final Action `{ element, operation, value }` to be performed.
+
 ## Grounding Methods 
+
+After action generation, and agent deciding the final action to be taken, the actual element grounding proves to be a major challenge. 
 
 A major aspect of this work was exploring and evaluating the agent on several grounding methods.
 
 ![SeeAct Logo](/imgs/image-5.png)  
 *Logo Source: Boyuan Zheng, Boyu Gou, Jihyung Kil, Huan Sun, Yu Su, The Ohio State University.*
 
+## Challenges in Grounding via Textual Choices
+
+- **Model Limitations:** Unable to handle elements like pop-ups, iframes not visible in the HTML DOM Tree.
+- **Textual Choice Challenges:** When faced with similar textual options, the model often selects the first choice that appears to match its intention. This issue arises because web pages can contain multiple elements with identical HTML information.
+
+## Grounding via Image Annotation
+
+This is a purely vision based grounding method where all the interactable elements in the screen were annotated and numbered as bounding boxes. Then, the action was carried out based on the coordinates of the element. 
+![Alt text](/imgs/prompt-visual.png)
+
+- **Bounding Box Issues:** Difficulty in making bounding boxes and labeling when the target element is not visible in the viewport.
+- **Label Association Errors:** The LMMs struggle with understanding the relative spatial positions and complex, dense layouts of webpage elements. This often leads to incorrect associations of labels with adjacent elements instead of the intended ones.
+
+## Grounding via Element Attributes
+![Alt text](/imgs/element.png)
+- **Heuristic Limitations:** The grounding process is constrained by heuristic-based methods for locating elements, which rely heavily on textual and locality characteristics.
 
 
 
@@ -51,19 +82,6 @@ A major aspect of this work was exploring and evaluating the agent on several gr
 
 ## Analysis 
 
-## Challenges in Grounding via Textual Choices
-
-- **Model Limitations:** Unable to handle elements like pop-ups, iframes not visible in the HTML DOM Tree.
-- **Textual Choice Challenges:** When faced with similar textual options, the model often selects the first choice that appears to match its intention. This issue arises because web pages can contain multiple elements with identical HTML information.
-
-## Grounding via Image Annotation
-
-- **Bounding Box Issues:** Difficulty in making bounding boxes and labeling when the target element is not visible in the viewport.
-- **Label Association Errors:** The LMMs struggle with understanding the relative spatial positions and complex, dense layouts of webpage elements. This often leads to incorrect associations of labels with adjacent elements instead of the intended ones.
-
-## Grounding via Element Attributes
-
-- **Heuristic Limitations:** The grounding process is constrained by heuristic-based methods for locating elements, which rely heavily on textual and locality characteristics.
 
 …
 
