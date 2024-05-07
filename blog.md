@@ -32,7 +32,7 @@ SeeAct initially utilizes an LMM (Large Multimodal Modal), such as GPT-4V, for A
 
 # The Environment
 
-![Alt text](image-6.png)
+![Alt text](/imgs/image-6.png)
 
 Each Test can be decomposed into a sequence of actions that are taken by the agent. At each time step t, we provide the agent with:
 - **Task**
@@ -51,23 +51,38 @@ A major aspect of this work was exploring and evaluating the agent on several gr
 ![SeeAct Logo](/imgs/image-5.png)  
 *Logo Source: Boyuan Zheng, Boyu Gou, Jihyung Kil, Huan Sun, Yu Su, The Ohio State University.*
 
-## Challenges in Grounding via Textual Choices
-
-- **Model Limitations:** Unable to handle elements like pop-ups, iframes not visible in the HTML DOM Tree.
-- **Textual Choice Challenges:** When faced with similar textual options, the model often selects the first choice that appears to match its intention. This issue arises because web pages can contain multiple elements with identical HTML information.
 
 ## Grounding via Image Annotation
 
 This is a purely vision based grounding method where all the interactable elements in the screen were annotated and numbered as bounding boxes. Then, the action was carried out based on the coordinates of the element. 
 ![Alt text](/imgs/prompt-visual.png)
 
+
+## Challenges in Grounding via Image Annotation
+
 - **Bounding Box Issues:** Difficulty in making bounding boxes and labeling when the target element is not visible in the viewport.
 - **Label Association Errors:** The LMMs struggle with understanding the relative spatial positions and complex, dense layouts of webpage elements. This often leads to incorrect associations of labels with adjacent elements instead of the intended ones.
 
 ## Grounding via Element Attributes
+Model generate attributes (textual descriptions) and the heuristic search on the HTML dom tree (e.g. describes the elements that are proximal to it, details regarding the specific element, and identifiable information)
+
+## Challenges in Grounding via Element Attributes
+
 ![Alt text](/imgs/element.png)
 - **Heuristic Limitations:** The grounding process is constrained by heuristic-based methods for locating elements, which rely heavily on textual and locality characteristics.
 
+## Grounding via Textual Choices (Best Performing Grounding Method)
+Action generation using textual choices whereby all the interactive elements from the HTML Dom Tree were being extracted and presented in a multiple choice option format for the agent to select. 
+
+Post selection, the corresponding action, value and element pair would be executed using playwright. 
+
+![Alt text](/imgs/text.png)
+
+## Challenges in Grounding via Textual Choices
+
+- **Model Limitations:** Unable to handle elements like pop-ups, iframes not visible in the HTML DOM Tree.
+- **Textual Choice Challenges:** When faced with similar textual options, the model often selects the first choice that appears to match its intention. This issue arises because web pages can contain multiple elements with identical HTML information.
+- **Slow Parsing:** Since the entire HTML dom tree is being extracted for its interactable elements like (spans, dropdowns, button elements), this parsing is extremely slow and slows the agent down significantly. 
 
 
 ### Results
@@ -79,11 +94,6 @@ This is a purely vision based grounding method where all the interactable elemen
 3. **In-Context Learning vs. Supervised Fine-Tuning:** In-context learning with large models, including both LMMs (Large Multimodal Models) and LLMs (Large Language Models), demonstrates improved generalization to unseen websites. However, supervised fine-tuning maintains a competitive advantage on websites that were included during the training phase.
 
 ![Alt text](/imgs/image-4.png)
-
-## Analysis 
-
-
-…
 
 # Interesting Observations
 
