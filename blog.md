@@ -22,14 +22,22 @@ AI is autonomous agents that can follow language instructions to carry out diver
 In this paper, AI Web Agents were explored. The environment is the web environment, and agents are made to follow open-ended language instructions like ("Order me a red scarf on Amazon.com") and complete tasks as seen in the image below. 
 
 ![red scarf path](/imgs/image.png)
-…
 
 ### Methodology
 
 ![Alt text](/imgs/image-3.png)
 
 SeeAct initially utilizes an LMM (Large Multimodal Modal), such as GPT-4V, for Action Generation by enabling the model to visually interpret websites and create textual action plans. They specifically direct GPT-4V to simulate human interactions with a webpage, taking into account the task at hand, the webpage's layout, and action history. It is tasked with producing a description of the action based on its evaluation and reasoning. Following this, Action Grounding involves translating these textual plans into specific actions by identifying relevant HTML elements and the operations to be performed on them.
-…
+
+## Grounding Methods 
+
+A major aspect of this work was exploring and evaluating the agent on several grounding methods.
+
+![SeeAct Logo](/imgs/image-5.png)  
+*Logo Source: Boyuan Zheng, Boyu Gou, Jihyung Kil, Huan Sun, Yu Su, The Ohio State University.*
+
+
+
 
 ### Results
 
