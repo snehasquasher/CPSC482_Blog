@@ -39,6 +39,26 @@ SeeAct initially utilizes an LMM (Large Multimodal Modal), such as GPT-4V, for A
 2. **Challenges in Grounding:** Grounding remains a substantial challenge. Even the best grounding strategy, SeeAct Choice, exhibits a 20-25% performance gap compared to oracle grounding.
 3. **In-Context Learning vs. Supervised Fine-Tuning:** In-context learning with large models, including both LMMs (Large Multimodal Models) and LLMs (Large Language Models), demonstrates improved generalization to unseen websites. However, supervised fine-tuning maintains a competitive advantage on websites that were included during the training phase.
 
+![Alt text](/imgs/image-4.png)
+
+## Analysis 
+
+### Error Analysis (Grounding Methods) 
+
+## Challenges in Grounding via Textual Choices
+
+- **Model Limitations:** Unable to handle elements like pop-ups, iframes not visible in the HTML DOM Tree.
+- **Textual Choice Challenges:** When faced with similar textual options, the model often selects the first choice that appears to match its intention. This issue arises because web pages can contain multiple elements with identical HTML information.
+
+## Grounding via Image Annotation
+
+- **Bounding Box Issues:** Difficulty in making bounding boxes and labeling when the target element is not visible in the viewport.
+- **Label Association Errors:** The LMMs struggle with understanding the relative spatial positions and complex, dense layouts of webpage elements. This often leads to incorrect associations of labels with adjacent elements instead of the intended ones.
+
+## Grounding via Element Attributes
+
+- **Heuristic Limitations:** The grounding process is constrained by heuristic-based methods for locating elements, which rely heavily on textual and locality characteristics.
+
 
 …
 
