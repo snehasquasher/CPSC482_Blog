@@ -110,10 +110,10 @@ Post selection, the corresponding action, value and element pair would be execut
 
 ## Analysis & Areas of Improvement 
 
-Analysis of the selected paper, organized as bullet points, in particular:
-What interests you the most about this work?
-What are the places for improvements, for example, what are the ways you can think of to further improve the performance of the proposed method?
+This paper has done a great job in curating one of the first generalist web agents to perform on real life online websites. However, there are many areas for improvement. 
 
-* …
+First, I believe the path forward is in using visual grounding. While the text based HTML choices are the best performing element grounding method in the paper, it has several limitations: extremely high numbers of tokens, slow parsing as well as failure on real world websits that have more complex front-end designs. An improvement in visual grounding could come from training foundational models on website data to improve its ability to map interactive elements on a page to coordinates and bounding boxes accurately. This would drastically improve the speed of execution of the agent as well as reduce the number of tokens needed to pass into the LLM per call. 
 
-* …
+Second, I think fine-tuning the agent on website trajectories could be another direction to take. Currently, the VLM does not have a very good understanding of webpages since we are using GPT4V which is mostly trained on text data. 
+
+Finally, exploring agent memory could be an interesting direction. For example, going beyond just providing the previous action history, but augmenting the agent with information specific to a webpage (screenshots, documentation, past interactions) etc and getting it to perform with retrieval augmented generation. 
