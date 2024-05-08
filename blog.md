@@ -19,7 +19,7 @@ AI agents are ones that can follow language instructions to carry out diverse an
 
 AI is autonomous agents that can follow language instructions to carry out diverse and complex tasks in real-world or simulated environments.
 
-In this paper, AI Web Agents were explored. The environment is the web environment, and agents are made to follow open-ended language instructions like ("Order me a red scarf on Amazon.com") and complete tasks as seen in the image below. 
+In this paper, AI Web Agents were explored. The environment is the web environment, and agents are made to follow open-ended language instructions like ("Order me a red scarf on Amazon.com") and complete tasks as seen in the image below. This work is extremely interesting as it is the first work that has built AI agents for real world website browsing. Past works have focused on agents built for simulated offline environments. Furthermore, the real world environment really introduces a whole host of novel challenges like complex HTML, complicated flows, iframes, popups, system dialogs which previous works were not able to capture. 
 
 ![Alt text](/imgs/red.png)
 
@@ -131,4 +131,4 @@ Introducing a memory component to the agent could lead to significant improvemen
 **Proposed Action:** Develop a memory augmentation framework that allows the agent to store and retrieve context-relevant information during interactions. This could involve using techniques from retrieval-augmented generation to enhance the agent’s ability to pull from past experiences to inform current actions.
 
 ## Conclusion
-Overall, this paper is a seminal work in the developmemt of autonomous web agents. They have presented a novel method and evaluation of web agents. Furthermore, this work has also elucidated the current limitations of web agents, specifically in the element grounding phase. 
+Overall, this paper is a seminal work in the developmemt of autonomous web agents on real world websites. They have presented a novel method and evaluation of web agents. Furthermore, this work has also elucidated the current limitations of web agents, specifically in the element grounding phase. I anticipate future work being on a vision language model finetuned for webpages where instead of relying on HTML the agent would be able to succeed on purely visual grounding methods which more accurately emulates the way humans parse websites today - visually. 
