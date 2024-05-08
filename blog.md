@@ -77,7 +77,7 @@ Action generation using textual choices whereby all the interactive elements fro
 
 Post selection, the corresponding action, value and element pair would be executed using playwright. 
 
-![Alt text](text.png)
+![Alt text](/imgs/text.png)
 
 ## Challenges in Grounding via Textual Choices
 
