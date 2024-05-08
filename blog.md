@@ -77,7 +77,7 @@ Action generation using textual choices whereby all the interactive elements fro
 
 Post selection, the corresponding action, value and element pair would be executed using playwright. 
 
-![Alt text](/imgs/text.png)
+![Alt text](text.png)
 
 ## Challenges in Grounding via Textual Choices
 
@@ -131,4 +131,4 @@ Introducing a memory component to the agent could lead to significant improvemen
 **Proposed Action:** Develop a memory augmentation framework that allows the agent to store and retrieve context-relevant information during interactions. This could involve using techniques from retrieval-augmented generation to enhance the agent’s ability to pull from past experiences to inform current actions.
 
 ## Conclusion
-TO DO
+Overall, this paper is a seminal work in the developmemt of autonomous web agents. They have presented a novel method and evaluation of web agents. Furthermore, this work has also elucidated the current limitations of web agents, specifically in the element grounding phase. 
