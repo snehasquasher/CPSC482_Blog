@@ -8,7 +8,7 @@ May 6 2024
 
 ### Summary 
 
-This paper is a continuation from the work in Mind2Web (Deng et al, 2023) which was a benchmark for building realistic web agents. The main contributions of this work involve the development of a generalist web agent SeeAct on real world websites. Unlike a lot of the previous work that has been on offline environments, SeeAct was built to perform on real-world webpages. Various grounding methods were explored:  Visual Grounding, Textual Grounding and Multiple Choice based grounding.This paper has demonstrated that GPT-4V presents a great potential for web agents with a successful task completion rate of about 51.1% on tasks presented with the oracle grounding method (manually ground its textual plans into actions on the websites). The paper also examines novel visul prompting methods like Set of Marks (citation) and showed that it still is pretty limited, and there is a major gap with oracle grounding. 
+This paper is a continuation from the work in Mind2Web (Deng et al, 2023) which was a benchmark for building realistic web agents. The main contributions of this work involve the development of a generalist web agent SeeAct on real world websites. Unlike a lot of the previous work that has been on offline environments, SeeAct was built to perform on real-world webpages. Various grounding methods were explored:  Visual Grounding, Textual Grounding and Multiple Choice based grounding.This paper has demonstrated that GPT-4V presents a great potential for web agents with a successful task completion rate of about 51.1% on tasks presented with the oracle grounding method (manually ground its textual plans into actions on the websites). The paper also examines novel visul prompting methods like Set of Marks and showed that it still is pretty limited, and there is a major gap with oracle grounding. 
 
 
 ### Motivation
@@ -21,7 +21,7 @@ AI is autonomous agents that can follow language instructions to carry out diver
 
 In this paper, AI Web Agents were explored. The environment is the web environment, and agents are made to follow open-ended language instructions like ("Order me a red scarf on Amazon.com") and complete tasks as seen in the image below. 
 
-![red scarf path](/imgs/image.png)
+![Alt text](/imgs/red.png)
 
 ### Methodology
 
